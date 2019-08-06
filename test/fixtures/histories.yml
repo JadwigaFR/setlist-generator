@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  concert: one
+  user: one
+  spotify: false
+  favorite: false
+  participation: false
+
+two:
+  concert: two
+  user: two
+  spotify: false
+  favorite: false
+  participation: false

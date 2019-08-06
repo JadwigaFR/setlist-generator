@@ -1,0 +1,134 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (20.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (14.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to DeviseCreateUsers (20190806181622)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190806181622_devise_create_users.rb:5
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  ↳ db/migrate/20190806181622_devise_create_users.rb:39
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  ↳ db/migrate/20190806181622_devise_create_users.rb:40
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190806181622"]]
+  ↳ bin/rails:9
+  [1m[35m (16.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateVenues (20190806182938)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "venues" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "city" varchar, "country" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190806182938_create_venues.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190806182938"]]
+  ↳ bin/rails:9
+  [1m[35m (16.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateArtists (20190806183047)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "artists" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190806183047_create_artists.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190806183047"]]
+  ↳ bin/rails:9
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateConcerts (20190806183124)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "concerts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "date" date, "artist_id" integer, "venue_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_d40a0fb5cb"
+FOREIGN KEY ("artist_id")
+  REFERENCES "artists" ("id")
+, CONSTRAINT "fk_rails_a72d62761d"
+FOREIGN KEY ("venue_id")
+  REFERENCES "venues" ("id")
+)[0m
+  ↳ db/migrate/20190806183124_create_concerts.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_concerts_on_artist_id" ON "concerts" ("artist_id")[0m
+  ↳ db/migrate/20190806183124_create_concerts.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_concerts_on_venue_id" ON "concerts" ("venue_id")[0m
+  ↳ db/migrate/20190806183124_create_concerts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190806183124"]]
+  ↳ bin/rails:9
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateAlbums (20190806183216)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "albums" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "date" date, "artist_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_124a79559a"
+FOREIGN KEY ("artist_id")
+  REFERENCES "artists" ("id")
+)[0m
+  ↳ db/migrate/20190806183216_create_albums.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_albums_on_artist_id" ON "albums" ("artist_id")[0m
+  ↳ db/migrate/20190806183216_create_albums.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190806183216"]]
+  ↳ bin/rails:9
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateSongs (20190806183243)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "songs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "album_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_f4e40cd655"
+FOREIGN KEY ("album_id")
+  REFERENCES "albums" ("id")
+)[0m
+  ↳ db/migrate/20190806183243_create_songs.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_songs_on_album_id" ON "songs" ("album_id")[0m
+  ↳ db/migrate/20190806183243_create_songs.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190806183243"]]
+  ↳ bin/rails:9
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateSetlists (20190806183319)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "setlists" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "concert_id" integer, "song_id" integer, "index" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_c778d966d4"
+FOREIGN KEY ("concert_id")
+  REFERENCES "concerts" ("id")
+, CONSTRAINT "fk_rails_89df3ab309"
+FOREIGN KEY ("song_id")
+  REFERENCES "songs" ("id")
+)[0m
+  ↳ db/migrate/20190806183319_create_setlists.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_setlists_on_concert_id" ON "setlists" ("concert_id")[0m
+  ↳ db/migrate/20190806183319_create_setlists.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_setlists_on_song_id" ON "setlists" ("song_id")[0m
+  ↳ db/migrate/20190806183319_create_setlists.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190806183319"]]
+  ↳ bin/rails:9
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateHistories (20190806183924)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "histories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "concert_id" integer, "user_id" integer, "spotify" boolean, "favorite" boolean, "participation" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_ebaa9c01e7"
+FOREIGN KEY ("concert_id")
+  REFERENCES "concerts" ("id")
+, CONSTRAINT "fk_rails_ddbf5f9cca"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  ↳ db/migrate/20190806183924_create_histories.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_histories_on_concert_id" ON "histories" ("concert_id")[0m
+  ↳ db/migrate/20190806183924_create_histories.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_histories_on_user_id" ON "histories" ("user_id")[0m
+  ↳ db/migrate/20190806183924_create_histories.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190806183924"]]
+  ↳ bin/rails:9
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-08-06 18:39:54.615726"], ["updated_at", "2019-08-06 18:39:54.615726"]]
+  ↳ bin/rails:9
+  [1m[35m (8.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
