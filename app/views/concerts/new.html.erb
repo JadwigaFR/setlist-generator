@@ -1,0 +1,6 @@
+<h1>Create a new concert</h1>
+
+<%= form_tag search_concert_path do %>
+  <%= text_field_tag :url, params[:url] %>
+  <%= submit_tag("Search") %>
+<% end %>

@@ -1,2 +1,7 @@
 <h1>Concert index</h1>
+<h2>Currently saved concerts</h2>
 <%= @concerts.count %>
+<h2>Want to save a new concert?</h2>
+<div class="btn btn-primary">
+  <%= link_to 'New', new_concert_path, class: "btn" %> |
+</div>
