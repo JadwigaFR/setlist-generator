@@ -62,6 +62,7 @@ class SearchResultsController < ApplicationController
 
   def create_venue(venue_json)
     venue_json
+    Venue.create(name: venue_json['name'], city: venue_json['city']['name'], country: venue_json['city']['country']['name'], setlist_fm_id: extract_setlist_id(venue_json['url']))
     raise
   end
 
