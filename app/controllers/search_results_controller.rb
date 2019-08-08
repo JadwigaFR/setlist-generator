@@ -1,11 +1,12 @@
 require 'httparty'
 require 'rspotify'
-RSpotify::authenticate('71e77c5f36c14c3ba1432a31f40586f8', 'd50b3ee88cc645e0a355b39e46760e8b')
+RSpotify::authenticate(ENV['SPOTIFY_CLIENT'], ENV['SPOTIFY_KEY'])
 
 class SearchResultsController < ApplicationController
   def search_concert
-    concert_id = search_params[:url].split('-').last.split('.').first
+    concert_id = extract_setlist_id(search_params[:url]).split('-').last.split('.').first
     concert = Concert.find_by(setlistfm_id: concert_id)
+
     if concert.present?
       redirect_to concert_path(concert)
       # Add an alert to say that the concert is already present in our database.
@@ -18,8 +19,8 @@ class SearchResultsController < ApplicationController
 
       venue_hash = json['venue']
       venue = Venue.find_by(name: venue_hash['name'])
-      venue = create_venue(venue_hash['name']) unless venue.present?
-      raise
+      venue = create_venue(venue_hash) unless venue.present?
+
       concert = Concert.create(date: DateTime.parse(json['eventDate']), artist_id: artist.id, venue_id: '')
       venue = json['venue']
       tour = json['tour']
@@ -59,7 +60,12 @@ class SearchResultsController < ApplicationController
     Artist.create(name: spotify_artist.name, spotify_id: spotify_artist.id, genres: spotify_artist.genres, image: spotify_artist.images.first['url'])
   end
 
-  def create_venue(venue_name)
+  def create_venue(venue_json)
+    venue_json
+    raise
+  end
+
+  def extract_setlist_id(url)
 
   end
 
