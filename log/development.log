@@ -1994,3 +1994,743 @@ RuntimeError ():
 app/controllers/search_results_controller.rb:7:in `search_concert'
 Started PUT "/__web_console/repl_sessions/308f5f10f7c4689058d9d083429c8472" for ::1 at 2019-08-07 20:26:09 +0200
 Started PUT "/__web_console/repl_sessions/308f5f10f7c4689058d9d083429c8472" for ::1 at 2019-08-07 20:26:10 +0200
+Started POST "/search_concert" for ::1 at 2019-08-07 20:44:04 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.6.2/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SearchResultsController#search_concert as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tI4d9TBGPj+jLqXr87ZG6oGvSsbryHcZi8SlEXw8GngQ1/MXv/Sq9k98a1O6gUcNHHzXsEMgE4xg3zMWZH4YAg==", "url"=>"https://www.setlist.fm/setlist/metallica/2012/donington-park-castle-donington-england-7bdfcefc.html", "commit"=>"Search"}
+Unpermitted parameters: :utf8, :authenticity_token, :commit
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+
+Errno::ECONNREFUSED - Connection refused - connect(2) for nil port 80:
+  app/controllers/search_results_controller.rb:18:in `get_request_for_url'
+  app/controllers/search_results_controller.rb:6:in `search_concert'
+
+Started POST "/__better_errors/cc7e2c7fb04b41a4/variables" for ::1 at 2019-08-07 20:44:05 +0200
+Started POST "/__better_errors/cc7e2c7fb04b41a4/eval" for ::1 at 2019-08-07 20:44:21 +0200
+Started POST "/__better_errors/cc7e2c7fb04b41a4/eval" for ::1 at 2019-08-07 20:44:31 +0200
+Started POST "/search_concert" for ::1 at 2019-08-07 20:44:46 +0200
+Processing by SearchResultsController#search_concert as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tI4d9TBGPj+jLqXr87ZG6oGvSsbryHcZi8SlEXw8GngQ1/MXv/Sq9k98a1O6gUcNHHzXsEMgE4xg3zMWZH4YAg==", "url"=>"https://www.setlist.fm/setlist/metallica/2012/donington-park-castle-donington-england-7bdfcefc.html", "commit"=>"Search"}
+Unpermitted parameters: :utf8, :authenticity_token, :commit
+Completed 500 Internal Server Error in 441ms (ActiveRecord: 0.0ms)
+
+
+
+RuntimeError - :
+  app/controllers/search_results_controller.rb:7:in `search_concert'
+
+Started POST "/__better_errors/7300d90d8bf6e942/variables" for ::1 at 2019-08-07 20:44:47 +0200
+Started POST "/__better_errors/7300d90d8bf6e942/eval" for ::1 at 2019-08-07 20:44:51 +0200
+Started POST "/search_concert" for ::1 at 2019-08-07 20:45:20 +0200
+Processing by SearchResultsController#search_concert as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tI4d9TBGPj+jLqXr87ZG6oGvSsbryHcZi8SlEXw8GngQ1/MXv/Sq9k98a1O6gUcNHHzXsEMgE4xg3zMWZH4YAg==", "url"=>"https://www.setlist.fm/setlist/nightwish/2018/hartwall-areena-helsinki-finland-1b949534.html", "commit"=>"Search"}
+Unpermitted parameters: :utf8, :authenticity_token, :commit
+Completed 500 Internal Server Error in 395ms (ActiveRecord: 0.0ms)
+
+
+
+RuntimeError - :
+  app/controllers/search_results_controller.rb:7:in `search_concert'
+
+Started POST "/__better_errors/34f1129c65f1b41f/variables" for ::1 at 2019-08-07 20:45:20 +0200
+  [1m[35m (1607.9ms)[0m  [1m[35mCREATE DATABASE "setlist_generator" ENCODING = 'unicode'[0m
+  ↳ /usr/local/rvm/rubies/default/bin//rake:23
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE DATABASE "setlist_generator" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (1490.5ms)[0m  [1m[35mCREATE DATABASE "setlist_generator_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (161.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "setlist_generator"[0m
+  ↳ bin/rails:9
+  [1m[35m (130.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "setlist_generator_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (2102.7ms)[0m  [1m[35mCREATE DATABASE "setlist_generator" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (1267.8ms)[0m  [1m[35mCREATE DATABASE "setlist_generator_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (148.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "setlist_generator"[0m
+  ↳ bin/rails:9
+  [1m[35m (121.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "setlist_generator_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (1603.9ms)[0m  [1m[35mCREATE DATABASE "setlist_generator" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (1560.6ms)[0m  [1m[35mCREATE DATABASE "setlist_generator_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "albums" CASCADE[0m
+  ↳ db/schema.rb:15
+  [1m[35m (84.0ms)[0m  [1m[35mCREATE TABLE "albums" ("id" bigserial primary key, "name" character varying, "date" date, "artist_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE  INDEX  "index_albums_on_artist_id" ON "albums"  ("artist_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "artists" CASCADE[0m
+  ↳ db/schema.rb:24
+  [1m[35m (9.2ms)[0m  [1m[35mCREATE TABLE "artists" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:24
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "concerts" CASCADE[0m
+  ↳ db/schema.rb:30
+  [1m[35m (9.3ms)[0m  [1m[35mCREATE TABLE "concerts" ("id" bigserial primary key, "date" date, "artist_id" integer, "venue_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "setlist_fm_url" character varying)[0m
+  ↳ db/schema.rb:30
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE  INDEX  "index_concerts_on_artist_id" ON "concerts"  ("artist_id")[0m
+  ↳ db/schema.rb:30
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE  INDEX  "index_concerts_on_venue_id" ON "concerts"  ("venue_id")[0m
+  ↳ db/schema.rb:30
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "histories" CASCADE[0m
+  ↳ db/schema.rb:41
+  [1m[35m (30.1ms)[0m  [1m[35mCREATE TABLE "histories" ("id" bigserial primary key, "concert_id" integer, "user_id" integer, "spotify" boolean, "favorite" boolean, "participation" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:41
+  [1m[35m (11.7ms)[0m  [1m[35mCREATE  INDEX  "index_histories_on_concert_id" ON "histories"  ("concert_id")[0m
+  ↳ db/schema.rb:41
+  [1m[35m (10.3ms)[0m  [1m[35mCREATE  INDEX  "index_histories_on_user_id" ON "histories"  ("user_id")[0m
+  ↳ db/schema.rb:41
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "setlists" CASCADE[0m
+  ↳ db/schema.rb:53
+  [1m[35m (33.4ms)[0m  [1m[35mCREATE TABLE "setlists" ("id" bigserial primary key, "concert_id" integer, "song_id" integer, "index" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:53
+  [1m[35m (83.7ms)[0m  [1m[35mCREATE  INDEX  "index_setlists_on_concert_id" ON "setlists"  ("concert_id")[0m
+  ↳ db/schema.rb:53
+  [1m[35m (75.7ms)[0m  [1m[35mCREATE  INDEX  "index_setlists_on_song_id" ON "setlists"  ("song_id")[0m
+  ↳ db/schema.rb:53
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "songs" CASCADE[0m
+  ↳ db/schema.rb:63
+  [1m[35m (26.4ms)[0m  [1m[35mCREATE TABLE "songs" ("id" bigserial primary key, "name" character varying, "album_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:63
+  [1m[35m (26.1ms)[0m  [1m[35mCREATE  INDEX  "index_songs_on_album_id" ON "songs"  ("album_id")[0m
+  ↳ db/schema.rb:63
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:71
+  [1m[35m (14.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:71
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/schema.rb:71
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  ↳ db/schema.rb:71
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "venues" CASCADE[0m
+  ↳ db/schema.rb:83
+  [1m[35m (10.5ms)[0m  [1m[35mCREATE TABLE "venues" ("id" bigserial primary key, "name" character varying, "city" character varying, "country" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:83
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190807161612)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (5.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190806183924),
+(20190806181622),
+(20190806183124),
+(20190806182938),
+(20190806183243),
+(20190806183216),
+(20190806183047),
+(20190806183319);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (14.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-08-07 19:12:53.587122"], ["updated_at", "2019-08-07 19:12:53.587122"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "albums" CASCADE[0m
+  ↳ db/schema.rb:15
+  [1m[35m (47.9ms)[0m  [1m[35mCREATE TABLE "albums" ("id" bigserial primary key, "name" character varying, "date" date, "artist_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (14.3ms)[0m  [1m[35mCREATE  INDEX  "index_albums_on_artist_id" ON "albums"  ("artist_id")[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "artists" CASCADE[0m
+  ↳ db/schema.rb:24
+  [1m[35m (28.1ms)[0m  [1m[35mCREATE TABLE "artists" ("id" bigserial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:24
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "concerts" CASCADE[0m
+  ↳ db/schema.rb:30
+  [1m[35m (19.8ms)[0m  [1m[35mCREATE TABLE "concerts" ("id" bigserial primary key, "date" date, "artist_id" integer, "venue_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "setlist_fm_url" character varying)[0m
+  ↳ db/schema.rb:30
+  [1m[35m (11.0ms)[0m  [1m[35mCREATE  INDEX  "index_concerts_on_artist_id" ON "concerts"  ("artist_id")[0m
+  ↳ db/schema.rb:30
+  [1m[35m (13.5ms)[0m  [1m[35mCREATE  INDEX  "index_concerts_on_venue_id" ON "concerts"  ("venue_id")[0m
+  ↳ db/schema.rb:30
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "histories" CASCADE[0m
+  ↳ db/schema.rb:41
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "histories" ("id" bigserial primary key, "concert_id" integer, "user_id" integer, "spotify" boolean, "favorite" boolean, "participation" boolean, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:41
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE  INDEX  "index_histories_on_concert_id" ON "histories"  ("concert_id")[0m
+  ↳ db/schema.rb:41
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE  INDEX  "index_histories_on_user_id" ON "histories"  ("user_id")[0m
+  ↳ db/schema.rb:41
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "setlists" CASCADE[0m
+  ↳ db/schema.rb:53
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE TABLE "setlists" ("id" bigserial primary key, "concert_id" integer, "song_id" integer, "index" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:53
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE  INDEX  "index_setlists_on_concert_id" ON "setlists"  ("concert_id")[0m
+  ↳ db/schema.rb:53
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE  INDEX  "index_setlists_on_song_id" ON "setlists"  ("song_id")[0m
+  ↳ db/schema.rb:53
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "songs" CASCADE[0m
+  ↳ db/schema.rb:63
+  [1m[35m (9.3ms)[0m  [1m[35mCREATE TABLE "songs" ("id" bigserial primary key, "name" character varying, "album_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:63
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE  INDEX  "index_songs_on_album_id" ON "songs"  ("album_id")[0m
+  ↳ db/schema.rb:63
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:71
+  [1m[35m (33.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:71
+  [1m[35m (10.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/schema.rb:71
+  [1m[35m (57.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  ↳ db/schema.rb:71
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "venues" CASCADE[0m
+  ↳ db/schema.rb:83
+  [1m[35m (61.3ms)[0m  [1m[35mCREATE TABLE "venues" ("id" bigserial primary key, "name" character varying, "city" character varying, "country" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:83
+  [1m[35m (31.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (6.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20190807161612)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (7.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20190806183924),
+(20190806181622),
+(20190806183124),
+(20190806182938),
+(20190806183243),
+(20190806183216),
+(20190806183047),
+(20190806183319);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (22.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-08-07 19:12:54.138973"], ["updated_at", "2019-08-07 19:12:54.138973"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2019-08-07 19:12:54.144689"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mSong Load (1.2ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" ORDER BY "songs"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3552869889657403560)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddSpotifyIdToSong (20190807192952)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "songs" ADD "spotify_id" character varying[0m
+  ↳ db/migrate/20190807192952_add_spotify_id_to_song.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190807192952"]]
+  ↳ bin/rails:9
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3552869889657403560)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3552869889657403560)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddSpotifyIdToAlbum (20190807193419)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190807193419"]]
+  ↳ bin/rails:9
+  [1m[35m (46.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3552869889657403560)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3552869889657403560)[0m
+  ↳ bin/rails:9
+  [1m[35m (42.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddSpotifyIdToArtist (20190807193634)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (2.1ms)[0m  [1m[35mALTER TABLE "artists" ADD "spotify_id" character varying[0m
+  ↳ db/migrate/20190807193634_add_spotify_id_to_artist.rb:3
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "albums" ADD "spotify_id" character varying[0m
+  ↳ db/migrate/20190807193634_add_spotify_id_to_artist.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190807193634"]]
+  ↳ bin/rails:9
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3552869889657403560)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started POST "/search_concert" for ::1 at 2019-08-07 21:43:46 +0200
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.6.2/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SearchResultsController#search_concert as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tI4d9TBGPj+jLqXr87ZG6oGvSsbryHcZi8SlEXw8GngQ1/MXv/Sq9k98a1O6gUcNHHzXsEMgE4xg3zMWZH4YAg==", "url"=>"https://www.setlist.fm/setlist/nightwish/2018/hartwall-areena-helsinki-finland-1b949534.html", "commit"=>"Search"}
+Unpermitted parameters: :utf8, :authenticity_token, :commit
+Completed 500 Internal Server Error in 259ms (ActiveRecord: 0.0ms)
+
+
+
+RuntimeError - :
+  app/controllers/search_results_controller.rb:7:in `search_concert'
+
+Started POST "/__better_errors/ef19748daf7aa2c7/variables" for ::1 at 2019-08-07 21:43:46 +0200
+Started POST "/__better_errors/ef19748daf7aa2c7/eval" for ::1 at 2019-08-07 21:43:49 +0200
+Started POST "/__better_errors/ef19748daf7aa2c7/eval" for ::1 at 2019-08-07 21:43:52 +0200
+Started POST "/__better_errors/ef19748daf7aa2c7/eval" for ::1 at 2019-08-07 21:43:56 +0200
+Started POST "/__better_errors/ef19748daf7aa2c7/eval" for ::1 at 2019-08-07 21:44:03 +0200
+Started POST "/__better_errors/ef19748daf7aa2c7/eval" for ::1 at 2019-08-07 21:44:10 +0200
+Started POST "/__better_errors/ef19748daf7aa2c7/eval" for ::1 at 2019-08-07 21:44:18 +0200
+Started POST "/__better_errors/ef19748daf7aa2c7/eval" for ::1 at 2019-08-07 21:44:24 +0200
+Started POST "/__better_errors/ef19748daf7aa2c7/eval" for ::1 at 2019-08-07 21:44:30 +0200
+Started POST "/__better_errors/ef19748daf7aa2c7/eval" for ::1 at 2019-08-07 21:44:33 +0200
+Started POST "/__better_errors/ef19748daf7aa2c7/eval" for ::1 at 2019-08-07 21:44:36 +0200
+Started POST "/__better_errors/ef19748daf7aa2c7/eval" for ::1 at 2019-08-07 21:44:41 +0200
+Started POST "/__better_errors/ef19748daf7aa2c7/eval" for ::1 at 2019-08-07 21:44:45 +0200
+Started POST "/__better_errors/ef19748daf7aa2c7/eval" for ::1 at 2019-08-07 21:44:55 +0200
+Started POST "/__better_errors/ef19748daf7aa2c7/eval" for ::1 at 2019-08-07 21:44:58 +0200
+Started POST "/__better_errors/ef19748daf7aa2c7/eval" for ::1 at 2019-08-07 21:45:12 +0200
+Started POST "/search_concert" for ::1 at 2019-08-07 21:45:52 +0200
+Processing by SearchResultsController#search_concert as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tI4d9TBGPj+jLqXr87ZG6oGvSsbryHcZi8SlEXw8GngQ1/MXv/Sq9k98a1O6gUcNHHzXsEMgE4xg3zMWZH4YAg==", "url"=>"https://www.setlist.fm/setlist/nightwish/2018/hartwall-areena-helsinki-finland-1b949534.html", "commit"=>"Search"}
+Unpermitted parameters: :utf8, :authenticity_token, :commit
+Completed 500 Internal Server Error in 240ms (ActiveRecord: 0.0ms)
+
+
+
+RuntimeError - :
+  app/controllers/search_results_controller.rb:9:in `block in search_concert'
+  app/controllers/search_results_controller.rb:8:in `search_concert'
+
+Started POST "/__better_errors/8271cb9d2d3b4b9d/variables" for ::1 at 2019-08-07 21:45:53 +0200
+Started POST "/__better_errors/8271cb9d2d3b4b9d/eval" for ::1 at 2019-08-07 21:45:56 +0200
+Started POST "/__better_errors/8271cb9d2d3b4b9d/eval" for ::1 at 2019-08-07 21:46:21 +0200
+Started POST "/__better_errors/8271cb9d2d3b4b9d/eval" for ::1 at 2019-08-07 21:46:25 +0200
+Started POST "/__better_errors/8271cb9d2d3b4b9d/eval" for ::1 at 2019-08-07 21:46:33 +0200
+Started POST "/__better_errors/8271cb9d2d3b4b9d/eval" for ::1 at 2019-08-07 21:46:50 +0200
+Started POST "/search_concert" for ::1 at 2019-08-07 21:46:54 +0200
+Processing by SearchResultsController#search_concert as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tI4d9TBGPj+jLqXr87ZG6oGvSsbryHcZi8SlEXw8GngQ1/MXv/Sq9k98a1O6gUcNHHzXsEMgE4xg3zMWZH4YAg==", "url"=>"https://www.setlist.fm/setlist/nightwish/2018/hartwall-areena-helsinki-finland-1b949534.html", "commit"=>"Search"}
+Unpermitted parameters: :utf8, :authenticity_token, :commit
+Completed 500 Internal Server Error in 418ms (ActiveRecord: 0.0ms)
+
+
+
+RuntimeError - :
+  app/controllers/search_results_controller.rb:10:in `block in search_concert'
+  app/controllers/search_results_controller.rb:8:in `search_concert'
+
+Started POST "/__better_errors/0efc81ff917a3433/variables" for ::1 at 2019-08-07 21:46:55 +0200
+Started POST "/__better_errors/0efc81ff917a3433/eval" for ::1 at 2019-08-07 21:52:19 +0200
+Started POST "/__better_errors/0efc81ff917a3433/eval" for ::1 at 2019-08-07 21:52:28 +0200
+Started POST "/__better_errors/0efc81ff917a3433/eval" for ::1 at 2019-08-07 21:52:52 +0200
+Started POST "/__better_errors/0efc81ff917a3433/eval" for ::1 at 2019-08-07 21:53:01 +0200
+Started POST "/search_concert" for ::1 at 2019-08-07 21:53:56 +0200
+Processing by SearchResultsController#search_concert as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tI4d9TBGPj+jLqXr87ZG6oGvSsbryHcZi8SlEXw8GngQ1/MXv/Sq9k98a1O6gUcNHHzXsEMgE4xg3zMWZH4YAg==", "url"=>"https://www.setlist.fm/setlist/nightwish/2018/hartwall-areena-helsinki-finland-1b949534.html", "commit"=>"Search"}
+Unpermitted parameters: :utf8, :authenticity_token, :commit
+Completed 500 Internal Server Error in 562ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `import_song' for #<SearchResultsController:0x00007fb7942861c8>:
+  app/controllers/search_results_controller.rb:18:in `block in search_concert'
+  app/controllers/search_results_controller.rb:14:in `search_concert'
+
+Started POST "/__better_errors/2fb65fed8efcddc2/variables" for ::1 at 2019-08-07 21:53:57 +0200
+Started POST "/__better_errors/2fb65fed8efcddc2/eval" for ::1 at 2019-08-07 21:54:02 +0200
+Started POST "/__better_errors/2fb65fed8efcddc2/eval" for ::1 at 2019-08-07 21:54:10 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3552869889657403560)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to ChangeNameColumnConcert (20190807195506)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "concerts" RENAME COLUMN "setlist_fm_url" TO "setlistfm_id"[0m
+  ↳ db/migrate/20190807195506_change_name_column_concert.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190807195506"]]
+  ↳ bin/rails:9
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3552869889657403560)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started POST "/search_concert" for ::1 at 2019-08-07 21:56:46 +0200
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.6.2/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SearchResultsController#search_concert as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tI4d9TBGPj+jLqXr87ZG6oGvSsbryHcZi8SlEXw8GngQ1/MXv/Sq9k98a1O6gUcNHHzXsEMgE4xg3zMWZH4YAg==", "url"=>"https://www.setlist.fm/setlist/nightwish/2018/hartwall-areena-helsinki-finland-1b949534.html", "commit"=>"Search"}
+Unpermitted parameters: :utf8, :authenticity_token, :commit
+  [1m[36mConcert Load (1.7ms)[0m  [1m[34mSELECT  "concerts".* FROM "concerts" WHERE "concerts"."setlistfm_id" = $1 LIMIT $2[0m  [["setlistfm_id", "1b949534"], ["LIMIT", 1]]
+  ↳ app/controllers/search_results_controller.rb:6
+Completed 500 Internal Server Error in 401ms (ActiveRecord: 4.9ms)
+
+
+
+NameError - undefined local variable or method `setlist_id' for #<SearchResultsController:0x00007fb7810d2678>
+Did you mean?  setlist:
+  app/controllers/search_results_controller.rb:7:in `search_concert'
+
+Started POST "/__better_errors/7ba2444c2530fcca/variables" for ::1 at 2019-08-07 21:56:47 +0200
+Started POST "/search_concert" for ::1 at 2019-08-07 21:56:56 +0200
+Processing by SearchResultsController#search_concert as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tI4d9TBGPj+jLqXr87ZG6oGvSsbryHcZi8SlEXw8GngQ1/MXv/Sq9k98a1O6gUcNHHzXsEMgE4xg3zMWZH4YAg==", "url"=>"https://www.setlist.fm/setlist/nightwish/2018/hartwall-areena-helsinki-finland-1b949534.html", "commit"=>"Search"}
+Unpermitted parameters: :utf8, :authenticity_token, :commit
+  [1m[36mConcert Load (0.2ms)[0m  [1m[34mSELECT  "concerts".* FROM "concerts" WHERE "concerts"."setlistfm_id" = $1 LIMIT $2[0m  [["setlistfm_id", "1b949534"], ["LIMIT", 1]]
+  ↳ app/controllers/search_results_controller.rb:6
+Completed 500 Internal Server Error in 604ms (ActiveRecord: 1.9ms)
+
+
+
+NoMethodError - undefined method `import_song' for #<SearchResultsController:0x00007fb79422ef68>:
+  app/controllers/search_results_controller.rb:19:in `block in search_concert'
+  app/controllers/search_results_controller.rb:15:in `search_concert'
+
+Started POST "/__better_errors/d38f8a7082a1d6ea/variables" for ::1 at 2019-08-07 21:56:57 +0200
+Started POST "/__better_errors/d38f8a7082a1d6ea/eval" for ::1 at 2019-08-07 21:57:00 +0200
+Started POST "/__better_errors/d38f8a7082a1d6ea/eval" for ::1 at 2019-08-07 21:57:04 +0200
+Started POST "/__better_errors/d38f8a7082a1d6ea/eval" for ::1 at 2019-08-07 21:59:05 +0200
+Started POST "/__better_errors/d38f8a7082a1d6ea/eval" for ::1 at 2019-08-07 21:59:18 +0200
+Started POST "/__better_errors/d38f8a7082a1d6ea/eval" for ::1 at 2019-08-07 21:59:20 +0200
+Started POST "/__better_errors/d38f8a7082a1d6ea/eval" for ::1 at 2019-08-07 22:00:00 +0200
+Started POST "/__better_errors/d38f8a7082a1d6ea/eval" for ::1 at 2019-08-07 22:00:09 +0200
+Started POST "/__better_errors/d38f8a7082a1d6ea/eval" for ::1 at 2019-08-07 22:00:13 +0200
+Started POST "/__better_errors/d38f8a7082a1d6ea/eval" for ::1 at 2019-08-07 22:00:43 +0200
+Started POST "/__better_errors/d38f8a7082a1d6ea/eval" for ::1 at 2019-08-07 22:00:50 +0200
+Started POST "/__better_errors/d38f8a7082a1d6ea/eval" for ::1 at 2019-08-07 22:01:09 +0200
+Started POST "/__better_errors/d38f8a7082a1d6ea/eval" for ::1 at 2019-08-07 22:01:19 +0200
+Started POST "/__better_errors/d38f8a7082a1d6ea/eval" for ::1 at 2019-08-07 22:01:32 +0200
+Started POST "/search_concert" for ::1 at 2019-08-07 22:05:34 +0200
+
+SyntaxError - syntax error, unexpected end, expecting end-of-input:
+  app/controllers/search_results_controller.rb:58:in `'
+
+Started POST "/__better_errors/3eb510e74909edf2/variables" for ::1 at 2019-08-07 22:05:35 +0200
+Started POST "/search_concert" for ::1 at 2019-08-07 22:06:01 +0200
+Processing by SearchResultsController#search_concert as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tI4d9TBGPj+jLqXr87ZG6oGvSsbryHcZi8SlEXw8GngQ1/MXv/Sq9k98a1O6gUcNHHzXsEMgE4xg3zMWZH4YAg==", "url"=>"https://www.setlist.fm/setlist/nightwish/2018/hartwall-areena-helsinki-finland-1b949534.html", "commit"=>"Search"}
+Unpermitted parameters: :utf8, :authenticity_token, :commit
+  [1m[36mConcert Load (1.4ms)[0m  [1m[34mSELECT  "concerts".* FROM "concerts" WHERE "concerts"."setlistfm_id" = $1 LIMIT $2[0m  [["setlistfm_id", "1b949534"], ["LIMIT", 1]]
+  ↳ app/controllers/search_results_controller.rb:6
+  [1m[36mArtist Load (1.9ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."name" = $1 LIMIT $2[0m  [["name", "Nightwish"], ["LIMIT", 1]]
+  ↳ app/controllers/search_results_controller.rb:14
+Completed 500 Internal Server Error in 676ms (ActiveRecord: 10.2ms)
+
+
+
+RestClient::Unauthorized - 401 Unauthorized:
+  app/controllers/search_results_controller.rb:40:in `import_spotify_artist'
+  app/controllers/search_results_controller.rb:15:in `search_concert'
+
+Started POST "/__better_errors/2aadaff0f088eac9/variables" for ::1 at 2019-08-07 22:06:02 +0200
+Started POST "/search_concert" for ::1 at 2019-08-07 22:06:47 +0200
+Processing by SearchResultsController#search_concert as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tI4d9TBGPj+jLqXr87ZG6oGvSsbryHcZi8SlEXw8GngQ1/MXv/Sq9k98a1O6gUcNHHzXsEMgE4xg3zMWZH4YAg==", "url"=>"https://www.setlist.fm/setlist/nightwish/2018/hartwall-areena-helsinki-finland-1b949534.html", "commit"=>"Search"}
+Unpermitted parameters: :utf8, :authenticity_token, :commit
+  [1m[36mConcert Load (0.3ms)[0m  [1m[34mSELECT  "concerts".* FROM "concerts" WHERE "concerts"."setlistfm_id" = $1 LIMIT $2[0m  [["setlistfm_id", "1b949534"], ["LIMIT", 1]]
+  ↳ app/controllers/search_results_controller.rb:7
+  [1m[36mArtist Load (0.6ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."name" = $1 LIMIT $2[0m  [["name", "Nightwish"], ["LIMIT", 1]]
+  ↳ app/controllers/search_results_controller.rb:15
+Completed 500 Internal Server Error in 442ms (ActiveRecord: 4.9ms)
+
+
+
+RestClient::Unauthorized - 401 Unauthorized:
+  app/controllers/search_results_controller.rb:41:in `import_spotify_artist'
+  app/controllers/search_results_controller.rb:16:in `search_concert'
+
+Started POST "/__better_errors/ee83bedf1382169f/variables" for ::1 at 2019-08-07 22:06:48 +0200
+Started POST "/search_concert" for ::1 at 2019-08-07 22:08:04 +0200
+Processing by SearchResultsController#search_concert as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tI4d9TBGPj+jLqXr87ZG6oGvSsbryHcZi8SlEXw8GngQ1/MXv/Sq9k98a1O6gUcNHHzXsEMgE4xg3zMWZH4YAg==", "url"=>"https://www.setlist.fm/setlist/nightwish/2018/hartwall-areena-helsinki-finland-1b949534.html", "commit"=>"Search"}
+Unpermitted parameters: :utf8, :authenticity_token, :commit
+  [1m[36mConcert Load (0.3ms)[0m  [1m[34mSELECT  "concerts".* FROM "concerts" WHERE "concerts"."setlistfm_id" = $1 LIMIT $2[0m  [["setlistfm_id", "1b949534"], ["LIMIT", 1]]
+  ↳ app/controllers/search_results_controller.rb:8
+  [1m[36mArtist Load (0.9ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."name" = $1 LIMIT $2[0m  [["name", "Nightwish"], ["LIMIT", 1]]
+  ↳ app/controllers/search_results_controller.rb:16
+Completed 500 Internal Server Error in 1340ms (ActiveRecord: 4.5ms)
+
+
+
+RuntimeError - :
+  app/controllers/search_results_controller.rb:43:in `import_spotify_artist'
+  app/controllers/search_results_controller.rb:17:in `search_concert'
+
+Started POST "/__better_errors/60a7469ab7aad70d/variables" for ::1 at 2019-08-07 22:08:09 +0200
+Started POST "/__better_errors/60a7469ab7aad70d/eval" for ::1 at 2019-08-07 22:08:14 +0200
+Started GET "/" for ::1 at 2019-08-08 07:30:17 +0200
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.6.2/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ConcertsController#index as HTML
+  Rendering concerts/index.html.erb within layouts/application
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "concerts"[0m
+  ↳ app/views/concerts/index.html.erb:3
+  Rendered concerts/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 279ms (Views: 262.5ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/concerts/new" for ::1 at 2019-08-08 07:30:22 +0200
+Processing by ConcertsController#new as HTML
+  Rendering concerts/new.html.erb within layouts/application
+  Rendered concerts/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 29ms (Views: 17.7ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/search_concert" for ::1 at 2019-08-08 07:30:39 +0200
+Processing by SearchResultsController#search_concert as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eThDKWZTkCDg2aOunzld0OfGY/SAmuQ3GqXWZbSv+qswaihq5otwDN1ujMffQn4CYLU+11ZRzjNmkwmeiw77dQ==", "url"=>"https://www.setlist.fm/setlist/nightwish/2018/gatorade-center-turku-finland-2b949c22.html", "commit"=>"Search"}
+Unpermitted parameters: :utf8, :authenticity_token, :commit
+  [1m[36mConcert Load (0.3ms)[0m  [1m[34mSELECT  "concerts".* FROM "concerts" WHERE "concerts"."setlistfm_id" = $1 LIMIT $2[0m  [["setlistfm_id", "2b949c22"], ["LIMIT", 1]]
+  ↳ app/controllers/search_results_controller.rb:8
+  [1m[36mArtist Load (1.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."name" = $1 LIMIT $2[0m  [["name", "Nightwish"], ["LIMIT", 1]]
+  ↳ app/controllers/search_results_controller.rb:16
+Completed 500 Internal Server Error in 572ms (ActiveRecord: 6.1ms)
+
+
+
+RuntimeError - :
+  app/controllers/search_results_controller.rb:44:in `import_spotify_artist'
+  app/controllers/search_results_controller.rb:17:in `search_concert'
+
+Started POST "/__better_errors/7a87be9c1e26771b/variables" for ::1 at 2019-08-08 07:30:40 +0200
+Started POST "/__better_errors/7a87be9c1e26771b/eval" for ::1 at 2019-08-08 07:30:46 +0200
+Started POST "/__better_errors/7a87be9c1e26771b/eval" for ::1 at 2019-08-08 07:31:45 +0200
+Started POST "/__better_errors/7a87be9c1e26771b/eval" for ::1 at 2019-08-08 07:31:49 +0200
+Started POST "/__better_errors/7a87be9c1e26771b/eval" for ::1 at 2019-08-08 07:31:58 +0200
+Started POST "/__better_errors/7a87be9c1e26771b/eval" for ::1 at 2019-08-08 07:34:17 +0200
+Started POST "/__better_errors/7a87be9c1e26771b/eval" for ::1 at 2019-08-08 07:34:29 +0200
+Started POST "/__better_errors/7a87be9c1e26771b/eval" for ::1 at 2019-08-08 07:34:47 +0200
+Started POST "/__better_errors/7a87be9c1e26771b/eval" for ::1 at 2019-08-08 07:34:58 +0200
+Started POST "/__better_errors/7a87be9c1e26771b/eval" for ::1 at 2019-08-08 07:35:25 +0200
+Started POST "/__better_errors/7a87be9c1e26771b/eval" for ::1 at 2019-08-08 07:36:20 +0200
+Started POST "/__better_errors/7a87be9c1e26771b/eval" for ::1 at 2019-08-08 07:36:45 +0200
+Started POST "/__better_errors/7a87be9c1e26771b/eval" for ::1 at 2019-08-08 07:36:53 +0200
+Started POST "/__better_errors/7a87be9c1e26771b/eval" for ::1 at 2019-08-08 07:36:58 +0200
+Started POST "/__better_errors/7a87be9c1e26771b/eval" for ::1 at 2019-08-08 07:37:03 +0200
+Started POST "/__better_errors/7a87be9c1e26771b/eval" for ::1 at 2019-08-08 07:37:07 +0200
+Started POST "/__better_errors/7a87be9c1e26771b/eval" for ::1 at 2019-08-08 07:37:12 +0200
+Started POST "/__better_errors/7a87be9c1e26771b/eval" for ::1 at 2019-08-08 07:37:17 +0200
+Started POST "/__better_errors/7a87be9c1e26771b/eval" for ::1 at 2019-08-08 07:37:22 +0200
+Started POST "/__better_errors/7a87be9c1e26771b/eval" for ::1 at 2019-08-08 07:37:29 +0200
+Started POST "/__better_errors/7a87be9c1e26771b/eval" for ::1 at 2019-08-08 07:37:36 +0200
+Started POST "/__better_errors/7a87be9c1e26771b/eval" for ::1 at 2019-08-08 07:37:43 +0200
+Started POST "/search_concert" for ::1 at 2019-08-08 07:38:42 +0200
+Processing by SearchResultsController#search_concert as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eThDKWZTkCDg2aOunzld0OfGY/SAmuQ3GqXWZbSv+qswaihq5otwDN1ujMffQn4CYLU+11ZRzjNmkwmeiw77dQ==", "url"=>"https://www.setlist.fm/setlist/nightwish/2018/gatorade-center-turku-finland-2b949c22.html", "commit"=>"Search"}
+Unpermitted parameters: :utf8, :authenticity_token, :commit
+  [1m[36mConcert Load (0.7ms)[0m  [1m[34mSELECT  "concerts".* FROM "concerts" WHERE "concerts"."setlistfm_id" = $1 LIMIT $2[0m  [["setlistfm_id", "2b949c22"], ["LIMIT", 1]]
+  ↳ app/controllers/search_results_controller.rb:8
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."name" = $1 LIMIT $2[0m  [["name", "Nightwish"], ["LIMIT", 1]]
+  ↳ app/controllers/search_results_controller.rb:16
+Completed 500 Internal Server Error in 497ms (ActiveRecord: 6.0ms)
+
+
+
+RuntimeError - :
+  app/controllers/search_results_controller.rb:48:in `block in import_spotify_artist'
+  app/controllers/search_results_controller.rb:46:in `import_spotify_artist'
+  app/controllers/search_results_controller.rb:17:in `search_concert'
+
+Started POST "/__better_errors/458b88e66d757aaa/variables" for ::1 at 2019-08-08 07:38:43 +0200
+Started POST "/__better_errors/458b88e66d757aaa/eval" for ::1 at 2019-08-08 07:38:48 +0200
+Started POST "/__better_errors/458b88e66d757aaa/eval" for ::1 at 2019-08-08 07:38:51 +0200
+Started POST "/__better_errors/458b88e66d757aaa/eval" for ::1 at 2019-08-08 07:39:00 +0200
+Started POST "/__better_errors/458b88e66d757aaa/eval" for ::1 at 2019-08-08 07:39:06 +0200
+Started POST "/__better_errors/458b88e66d757aaa/eval" for ::1 at 2019-08-08 07:39:12 +0200
+Started POST "/__better_errors/458b88e66d757aaa/eval" for ::1 at 2019-08-08 07:43:02 +0200
+Started POST "/search_concert" for ::1 at 2019-08-08 07:43:50 +0200
+Processing by SearchResultsController#search_concert as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eThDKWZTkCDg2aOunzld0OfGY/SAmuQ3GqXWZbSv+qswaihq5otwDN1ujMffQn4CYLU+11ZRzjNmkwmeiw77dQ==", "url"=>"https://www.setlist.fm/setlist/nightwish/2018/gatorade-center-turku-finland-2b949c22.html", "commit"=>"Search"}
+Unpermitted parameters: :utf8, :authenticity_token, :commit
+  [1m[36mConcert Load (0.3ms)[0m  [1m[34mSELECT  "concerts".* FROM "concerts" WHERE "concerts"."setlistfm_id" = $1 LIMIT $2[0m  [["setlistfm_id", "2b949c22"], ["LIMIT", 1]]
+  ↳ app/controllers/search_results_controller.rb:8
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."name" = $1 LIMIT $2[0m  [["name", "Nightwish"], ["LIMIT", 1]]
+  ↳ app/controllers/search_results_controller.rb:16
+Completed 500 Internal Server Error in 548ms (ActiveRecord: 4.5ms)
+
+
+
+RuntimeError - :
+  app/controllers/search_results_controller.rb:53:in `import_spotify_artist'
+  app/controllers/search_results_controller.rb:17:in `search_concert'
+
+Started POST "/__better_errors/26c53e83f6a34c13/variables" for ::1 at 2019-08-08 07:43:51 +0200
+Started POST "/__better_errors/26c53e83f6a34c13/eval" for ::1 at 2019-08-08 07:43:55 +0200
+Started POST "/__better_errors/26c53e83f6a34c13/eval" for ::1 at 2019-08-08 07:43:58 +0200
+Started POST "/__better_errors/26c53e83f6a34c13/eval" for ::1 at 2019-08-08 07:44:13 +0200
+Started POST "/__better_errors/26c53e83f6a34c13/eval" for ::1 at 2019-08-08 07:44:28 +0200
+Started POST "/__better_errors/26c53e83f6a34c13/eval" for ::1 at 2019-08-08 07:44:32 +0200
+Started POST "/__better_errors/26c53e83f6a34c13/eval" for ::1 at 2019-08-08 07:44:40 +0200
+Started POST "/__better_errors/26c53e83f6a34c13/eval" for ::1 at 2019-08-08 07:44:41 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3552869889657403560)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddColumnsToArtists (20190808054458)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (2.7ms)[0m  [1m[35mALTER TABLE "artists" ADD "genres" character varying[0m
+  ↳ db/migrate/20190808054458_add_columns_to_artists.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "artists" ADD "image" character varying[0m
+  ↳ db/migrate/20190808054458_add_columns_to_artists.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190808054458"]]
+  ↳ bin/rails:9
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3552869889657403560)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3552869889657403560)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddColumnsToArtists (20190808054458)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (3.3ms)[0m  [1m[35mALTER TABLE "artists" DROP COLUMN "image"[0m
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "artists" DROP COLUMN "genres"[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.6ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20190808054458"]]
+  ↳ bin/rails:9
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3552869889657403560)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3552869889657403560)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddColumnsToArtists (20190808054458)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "artists" ADD "genres" array[0m
+  ↳ db/migrate/20190808054458_add_columns_to_artists.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3552869889657403560)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3552869889657403560)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddColumnsToArtists (20190808054458)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "artists" ADD "genres" character varying[0m
+  ↳ db/migrate/20190808054458_add_columns_to_artists.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "artists" ADD "image" character varying[0m
+  ↳ db/migrate/20190808054458_add_columns_to_artists.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190808054458"]]
+  ↳ bin/rails:9
+  [1m[35m (37.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(3552869889657403560)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started POST "/__better_errors/26c53e83f6a34c13/eval" for ::1 at 2019-08-08 07:48:13 +0200
+Started POST "/__better_errors/26c53e83f6a34c13/eval" for ::1 at 2019-08-08 07:48:15 +0200
+Started POST "/__better_errors/26c53e83f6a34c13/eval" for ::1 at 2019-08-08 07:48:22 +0200
+Started POST "/__better_errors/26c53e83f6a34c13/eval" for ::1 at 2019-08-08 07:48:28 +0200
+Started POST "/search_concert" for ::1 at 2019-08-08 07:50:11 +0200
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/rvm/gems/ruby-2.6.2/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by SearchResultsController#search_concert as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eThDKWZTkCDg2aOunzld0OfGY/SAmuQ3GqXWZbSv+qswaihq5otwDN1ujMffQn4CYLU+11ZRzjNmkwmeiw77dQ==", "url"=>"https://www.setlist.fm/setlist/nightwish/2018/gatorade-center-turku-finland-2b949c22.html", "commit"=>"Search"}
+Unpermitted parameters: :utf8, :authenticity_token, :commit
+  [1m[36mConcert Load (0.3ms)[0m  [1m[34mSELECT  "concerts".* FROM "concerts" WHERE "concerts"."setlistfm_id" = $1 LIMIT $2[0m  [["setlistfm_id", "2b949c22"], ["LIMIT", 1]]
+  ↳ app/controllers/search_results_controller.rb:8
+  [1m[36mArtist Load (2.5ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."name" = $1 LIMIT $2[0m  [["name", "Nightwish"], ["LIMIT", 1]]
+  ↳ app/controllers/search_results_controller.rb:16
+  [1m[36mArtist Load (0.5ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."name" = $1 LIMIT $2[0m  [["name", "Nightwish"], ["LIMIT", 1]]
+  ↳ app/controllers/search_results_controller.rb:16
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/search_results_controller.rb:55
+  [1m[36mArtist Create (2.3ms)[0m  [1m[32mINSERT INTO "artists" ("name", "created_at", "updated_at", "spotify_id", "genres", "image") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Nightwish"], ["created_at", "2019-08-08 05:50:12.348506"], ["updated_at", "2019-08-08 05:50:12.348506"], ["spotify_id", "2NPduAUeLVsfIauhRwuft1"], ["genres", "[\"finnish metal\", \"gothic metal\", \"gothic symphonic metal\", \"power metal\", \"progressive metal\", \"symphonic metal\"]"], ["image", "https://i.scdn.co/image/b898e9dae37774273b0cd7924517db8c491f0ab2"]]
+  ↳ app/controllers/search_results_controller.rb:55
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/search_results_controller.rb:55
+Completed 500 Internal Server Error in 597ms (ActiveRecord: 17.1ms)
+
+
+
+RuntimeError - :
+  app/controllers/search_results_controller.rb:18:in `search_concert'
+
+Started POST "/__better_errors/0a16c384a12c8f7c/variables" for ::1 at 2019-08-08 07:50:12 +0200
+Started POST "/__better_errors/0a16c384a12c8f7c/eval" for ::1 at 2019-08-08 07:50:33 +0200
+Started POST "/__better_errors/0a16c384a12c8f7c/eval" for ::1 at 2019-08-08 07:51:16 +0200
+Started POST "/__better_errors/0a16c384a12c8f7c/eval" for ::1 at 2019-08-08 07:51:29 +0200
