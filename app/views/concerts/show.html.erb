@@ -1,0 +1,9 @@
+<h1><%= @concert.name %></h1>
+
+<ol>
+  <% @concert.setlists.sort_by(&:index).each do |track| %>
+    <li value="<%= track.index %>">
+      <%= track.name %>
+    </li>
+  <% end %>
+</ol>

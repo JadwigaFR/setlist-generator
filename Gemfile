@@ -7,6 +7,9 @@ ruby '2.6.2'
 gem 'rspotify'
 gem 'rack-cors'
 
+# To clean up models with blank attributes
+gem "nilify_blanks"
+
 # To read urls
 gem 'httparty'
 # To hide API keys
