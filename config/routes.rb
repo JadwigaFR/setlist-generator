@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { registrations: 'users/registrations' }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'concerts#index'
-  resources :concerts
-  post 'search_concert' => 'search_results#search_concert'
+  resources :concerts, shallow: true do
+    post 'create_playlist', to: 'spotify#create_playlist'
+  end
+  post 'search_concert', to: 'search_results#search_concert'
+  get '/auth/spotify/callback', to: 'users#spotify'
 end

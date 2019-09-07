@@ -7,3 +7,9 @@
     </li>
   <% end %>
 </ol>
+
+<%= link_to 'Create a Spotify playlist', '/auth/spotify' %>
+
+<%= link_to 'Open new playlist', @spotify_link if @spotify_link.present? %>
+
+<%= link_to 'Back', root_path %>

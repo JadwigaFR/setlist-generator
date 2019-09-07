@@ -5,3 +5,10 @@
 <div class="btn btn-primary">
   <%= link_to 'New', new_concert_path, class: "btn" %> |
 </div>
+
+<h2>Check out the concerts that were saved</h2>
+<ul>
+  <% @concerts.each do |concert| %>
+    <li><%= link_to concert.name, concert_path(concert) %><%= link_to fa_icon('trash'), concert_path(concert), method: :delete %></li>
+  <% end %>
+</ul>

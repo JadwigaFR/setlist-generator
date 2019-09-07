@@ -1,6 +1,3 @@
-require 'httparty'
-require 'rspotify'
-
 class SearchResultsController < ApplicationController
   before_action :connect_to_spotify
 
@@ -66,7 +63,7 @@ class SearchResultsController < ApplicationController
   end
 
   def import_song(song_name, artist)
-    # TODO: Import market from the user's config
+    # TODO: Import market from the users's config
     songs = RSpotify::Track.search(song_name, market: 'DE').reject{ |song| !song.artists.map(&:name).include?(artist.name) } # Search for songs and exclude the ones that aren't from the right artist
     spotify_song = songs.select{ |song| song.popularity.eql?(songs.map(&:popularity).max) }[0] # Select the song with highest popularity
 

@@ -6,7 +6,9 @@ class ConcertsController < ApplicationController
   end
 
   def show
+    @spotify_link = params[:external_url]
     @concert = Concert.find(params[:id])
+    session[:concert_id] = @concert.id
   end
 
   def new
@@ -15,12 +17,16 @@ class ConcertsController < ApplicationController
 
   def create
     @concert = Concert.create(concert_params)
-
+    raise
     redirect_to concert_path
   end
 
-  def edit
+  def create_average_setlist
 
+  end
+
+  def edit
+    @concert = Concert.find(params[:id])
   end
 
   def update
@@ -29,10 +35,10 @@ class ConcertsController < ApplicationController
     redirect_to concert_path(@concert)
   end
 
-  def delete
+  def destroy
     @concert.destroy
 
-    redirect_to concert_path
+    redirect_to concerts_path
   end
 
   private
