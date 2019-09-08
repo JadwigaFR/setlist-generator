@@ -67,6 +67,23 @@ group :development do
   gem "binding_of_caller"
 end
 
+group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'awesome_print'
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'factory_bot_rails'
+  gem 'guard'
+  gem 'guard-brakeman', require: false
+  gem 'guard-rspec', require: false
+  gem 'guard-rubocop', require: false
+  gem 'pry-byebug'
+  gem 'rspec-rails'
+  gem 'rubocop', '~> 0.74.0', require: false# Code quality https://github.com/bbatsov/rubocop
+  gem 'rubocop-checkstyle_formatter', require: false
+  gem 'rubocop-performance'
+  gem 'rubocop-rails'
+end
+
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'

@@ -1,48 +1,43 @@
 class SetlistsController < ApplicationController
-  before_action :connect_to_spotify
+  #before_action :connect_to_spotify
 
   def find_setlist
-    @concert_id = extract_setlist_id(search_params[:url])
-    @concert = Concert.find_by(setlistfm_id: @concert_id)
-    if @concert.present?
-      redirect_to concert_path(@concert)
+    @concert_id = extract_setlist_id(search_params)
+    concert = Concert.find_by(setlistfm_id: @concert_id)
+    if concert.present?
+      redirect_to concert_path(concert), flash: { notice: "Setlist already exist" }
     else
-      create_setlist(get_request_for_url("#{ENV['SETLIST_FM_URL']}setlist/#{@concert_id}"))
-      redirect_to concert_path(@concert)
+      json = get_request_for_url("#{ENV['SETLIST_FM_URL']}setlist/#{@concert_id}")
+      @concert_setlist = json.dig('sets', 'set')
+      if @concert_setlist.blank?
+        redirect_to new_concert_path, flash: {notice: "We couldn't find a setlist" }
+      else
+        create_setlist(json)
+        redirect_to concert_path(@concert), flash: { notice: "Setlist succesfully imported" }
+      end
     end
   end
 
-  private
-
   def create_setlist(json)
-    concert_setlist = json.dig('sets', 'set')
-
-    if concert_setlist.blank?
-      redirect_to new_concert
-      # Add alert to say that unfortunately there is no setlist on setlist fm
-    else
-      artist_name = json.dig('artist', 'name')
-      artist = Artist.find_by(name: artist_name)
-      artist ||= import_spotify_artist(artist_name)
-
-      venue_hash = json['venue']
-      venue = Venue.find_by(name: venue_hash['name'])
-      venue ||= create_venue(venue_hash)
-
-      @concert = Concert.create!(date: DateTime.parse(json['eventDate']), artist_id: artist.id, venue_id: venue.id, tour: json.dig('tour', 'name'), setlistfm_id: @concert_id)
-
-      setlist = concert_setlist[0]['song']
-      index = 0
-
-      song_pool = RSpotify::Artist.find(artist.spotify_id).albums.uniq(&:name).map(&:tracks).flatten
-      setlist.each do |song|
-        next if song['name'].blank?
-        index += 1
-        song_name = song['name']
-        saved_song = Song.find_by(name: song_name, artist_id: artist.id)
-        saved_song ||= import_song(song_name, song_pool, artist)
-        @concert.setlists.create!(song_id: saved_song.id, index: index)
-      end
+    # Artist
+    artist_name = json.dig('artist', 'name')
+    artist = Artist.find_by(name: artist_name)
+    artist ||= import_spotify_artist(artist_name)
+    # Venue
+    venue_hash = json['venue']
+    venue = Venue.find_by(name: venue_hash['name'])
+    venue ||= create_venue(venue_hash)
+    # Concert
+    @concert = Concert.create!(date: DateTime.parse(json['eventDate']), artist_id: artist.id, venue_id: venue.id, tour: json.dig('tour', 'name'), setlistfm_id: @concert_id)
+    # Setlist
+    setlist = []
+    @concert_setlist.each{|set| setlist << set['song']}
+    song_pool = RSpotify::Artist.find(artist.spotify_id).albums.uniq(&:name).map(&:tracks).flatten
+    setlist.flatten.reject{|hash| hash['name'].blank?}.each_with_index do |song, index|
+      song_name = song['name']
+      saved_song = Song.find_by(name: song_name, artist_id: artist.id)
+      saved_song ||= import_song(song_name, song_pool, artist)
+      @concert.setlists.create!(song_id: saved_song.id, index: index += 1)
     end
   end
 
@@ -96,7 +91,9 @@ class SetlistsController < ApplicationController
     JSON.parse(response.body)
   end
 
+  private
+
   def search_params
-    params.permit(:url)
+    params.require(:url)
   end
 end
