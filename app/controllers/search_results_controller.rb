@@ -8,37 +8,35 @@ class SearchResultsController < ApplicationController
       redirect_to concert_path(concert)
     else
       json = get_request_for_url("#{ENV['SETLIST_FM_URL']}setlist/#{concert_id}")
-
       concert_setlist = json['sets']['set']
 
       if concert_setlist.blank?
         redirect_to new_concert
         # Add alert to say that unfortunately there is no setlist
       else
-        artist_name = json['artist']['name']
+        artist_name = json.dig('artist', 'name')
         artist = Artist.find_by(name: artist_name)
-        artist = import_spotify_artist(artist_name) unless artist.present?
+        artist ||= import_spotify_artist(artist_name)
 
         venue_hash = json['venue']
         venue = Venue.find_by(name: venue_hash['name'])
-        venue = create_venue(venue_hash) unless venue.present?
-        tour_name = json['tour']['name'] if json['tour']
+        venue ||= create_venue(venue_hash)
+        tour_name = json.dig('tour', 'name')
         concert = Concert.create!(date: DateTime.parse(json['eventDate']), artist_id: artist.id, venue_id: venue.id, tour: tour_name, setlistfm_id: concert_id)
 
-          setlist = concert_setlist[0]['song']
-          index = 0
-          setlist.each do |song|
-            next if song['name'].blank?
-            index += 1
-            song_name = song['name']
-            saved_song = Song.find_by(name: song_name, artist_id: artist.id)
-            saved_song = import_song(song_name, artist) unless saved_song.present?
-            concert.setlists.create!(concert_id: concert.id, song_id: saved_song.id, index: index)
-          end
+        setlist = concert_setlist[0]['song']
+        index = 0
+        setlist.each do |song|
+          next if song['name'].blank?
+          index += 1
+          song_name = song['name']
+          saved_song = Song.find_by(name: song_name, artist_id: artist.id)
+          saved_song ||= import_song(song_name, artist)
+          concert.setlists.create!(concert_id: concert.id, song_id: saved_song.id, index: index)
+        end
       end
       redirect_to concert_path(concert)
     end
-
   end
 
   private
@@ -78,7 +76,7 @@ class SearchResultsController < ApplicationController
   end
 
   def create_venue(venue_json)
-    Venue.create!(name: venue_json['name'], city: venue_json['city']['name'], country: venue_json['city']['country']['name'], setlist_fm_id: extract_setlist_id(venue_json['url']))
+    Venue.create!(name: venue_json['name'], city: venue_json.dig('city', 'name'), country: venue_json.dig('city', 'country', 'name'), setlist_fm_id: extract_setlist_id(venue_json['url']))
   end
 
   def extract_setlist_id(url)
