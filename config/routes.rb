@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'concerts#index'
   resources :concerts, shallow: true do
-    post 'create_playlist', to: 'spotify#create_playlist'
+    post 'create_spotify_playlist', to: 'playlists#create_spotify_playlist'
   end
-  post 'search_concert', to: 'search_results#search_concert'
+  post 'find_setlist', to: 'setlists#find_setlist'
   get '/auth/spotify/callback', to: 'users#spotify'
 end

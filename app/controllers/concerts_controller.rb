@@ -17,7 +17,6 @@ class ConcertsController < ApplicationController
 
   def create
     @concert = Concert.create(concert_params)
-    raise
     redirect_to concert_path
   end
 

@@ -8,7 +8,16 @@
 
 <h2>Check out the concerts that were saved</h2>
 <ul>
-  <% @concerts.each do |concert| %>
-    <li><%= link_to concert.name, concert_path(concert) %><%= link_to fa_icon('trash'), concert_path(concert), method: :delete %></li>
+  <% @concerts.sort_by(&:date).each do |concert| %>
+    <li><%= link_to concert.name, concert_path(concert) %> <%= link_to fa_icon('trash'), concert_path(concert), method: :delete %></li>
   <% end %>
 </ul>
+
+<h2>Do you want to export a Google Play Music playlist?</h2>
+<%#= form_for import_googlee_playlist_to_spotify do %>
+  <%#= file_field_tag :file %>
+  <%#= submit_tag 'Import CSV' %>
+<%# end %>
+
+<h2>First, log in with your spotify account</h2>
+<%= link_to 'Log-in', 'auth/spotify' %>

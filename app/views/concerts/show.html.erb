@@ -8,7 +8,7 @@
   <% end %>
 </ol>
 
-<%= link_to 'Create a Spotify playlist', '/auth/spotify' %>
+<%= link_to 'Create a Spotify playlist', concert_create_spotify_playlist_path(@concert.id), method: :post %>
 
 <%= link_to 'Open new playlist', @spotify_link if @spotify_link.present? %>
 
