@@ -3,6 +3,7 @@ class ConcertsController < ApplicationController
 
   def index
     @concerts = Concert.all
+    @file = Tempfile.new
   end
 
   def show

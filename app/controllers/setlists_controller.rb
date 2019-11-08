@@ -1,5 +1,4 @@
 class SetlistsController < ApplicationController
-  #before_action :connect_to_spotify
 
   def find_setlist
     @concert_id = extract_setlist_id(search_params)
@@ -24,9 +23,9 @@ class SetlistsController < ApplicationController
     artist = Artist.find_by(name: artist_name)
     artist ||= import_spotify_artist(artist_name)
     # Venue
-    venue_hash = json['venue']
-    venue = Venue.find_by(name: venue_hash['name'])
-    venue ||= create_venue(venue_hash)
+    venue_json = json['venue']
+    venue = Venue.find_by(name: venue_json  ['name'])
+    venue ||= Venue.create!(name: venue_json['name'], city: venue_json.dig('city', 'name'), country: venue_json.dig('city', 'country', 'name'), setlist_fm_id: extract_setlist_id(venue_json['url']))
     # Concert
     @concert = Concert.create!(date: DateTime.parse(json['eventDate']), artist_id: artist.id, venue_id: venue.id, tour: json.dig('tour', 'name'), setlistfm_id: @concert_id)
     # Setlist
@@ -39,10 +38,6 @@ class SetlistsController < ApplicationController
       saved_song ||= import_song(song_name, song_pool, artist)
       @concert.setlists.create!(song_id: saved_song.id, index: index += 1)
     end
-  end
-
-  def connect_to_spotify
-    RSpotify::authenticate(ENV['SPOTIFY_ID'], ENV['SPOTIFY_SECRET'])
   end
 
   def import_spotify_artist(artist_name)
@@ -72,10 +67,6 @@ class SetlistsController < ApplicationController
       Album.update!(name: spotify_song_album.name, date: DateTime.parse(spotify_song_album.release_date), artist_id: artist.id) unless album.present?
       Song.create!(name: song_name, album_id: album.id, spotify_id: spotify_song.id, artist_id: artist.id)
     end
-  end
-
-  def create_venue(venue_json)
-    Venue.create!(name: venue_json['name'], city: venue_json.dig('city', 'name'), country: venue_json.dig('city', 'country', 'name'), setlist_fm_id: extract_setlist_id(venue_json['url']))
   end
 
   def extract_setlist_id(url)

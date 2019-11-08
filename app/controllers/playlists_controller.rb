@@ -1,4 +1,6 @@
 class PlaylistsController < ApplicationController
+  require 'zip'
+
   def create_spotify_playlist
     spotify_user = RSpotify::User.new(session[:spotify_user])
     concert = Concert.find(params[:concert_id])
@@ -13,7 +15,28 @@ class PlaylistsController < ApplicationController
     redirect_to concert_path(session[:concert_id], external_url: external_url)
   end
 
-  def import_playlist
+  def import_google_playlist
+    raise
+    Zip::File.open(params[:file], Zip::File::CREATE) do |zip_file|
+      # Handle entries one by one
+      zip_file.each do |entry|
+        # Extract to file/directory/symlink
+        puts "Extracting #{entry.name}"
+        entry.extract(dest_file)
+
+        # Read into memory
+        content = entry.get_input_stream.read
+      end
+
+      # Find specific entry
+      entry = zip_file.glob('*.csv').first
+      puts entry.get_input_stream.read
+    end
+    redirect_to select_playlists_path(@playlists)
+  end
+
+  def select_playlist
+    @playlists
     raise
   end
 end
