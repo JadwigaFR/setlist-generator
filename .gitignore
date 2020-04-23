@@ -22,6 +22,9 @@
 
 # Ignore code coverage folder
 /coverage
+/log
+/public
+/tmp
 
 # Ignore uploaded files in development
 /storage/*
