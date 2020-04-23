@@ -19,5 +19,12 @@
   <%= submit_tag 'Import Playlists' %>
 <% end %>
 
+<% unless session[:spotify_user].present? %>
 <h2>First, log in with your spotify account</h2>
-<%= link_to 'Log-in', 'auth/spotify' %>
+<%= link_to 'Log-in', '/auth/spotify' %>
+<% end %>
+
+<h2>Do you want to export Playlists?</h2>
+<div class="btn btn-primary">
+  <%= link_to 'Export Playlists', playlists_path, class: "btn" %>
+</div>

@@ -1,0 +1,13 @@
+<h2>Select which playlists you want to extract</h2>
+<ul>
+  <%= form_with(url: extract_playlists_path, method: 'post') do |f| %>
+    <% @playlists.each do |playlist| %>
+      <li><%= label_tag(playlist.name) %>
+      <%= check_box_tag('playlists[]', playlist.id) %></li>
+    <% end %>
+    <%= submit_tag('Extract') %>
+  <% end %>
+</ul>
+<div class="btn btn-primary">
+  <%= link_to 'Go Back', root_path, class: "btn" %>
+</div>

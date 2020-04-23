@@ -7,6 +7,10 @@ Rails.application.routes.draw do
     post 'create_spotify_playlist', to: 'playlists#create_spotify_playlist'
   end
 
+  resources :playlists, shallow: true
+    post 'extract_playlists', to: 'playlists#extract_playlists'
+
+
   post 'find_setlist', to: 'setlists#find_setlist'
   get '/auth/spotify/callback', to: 'users#spotify'
 end

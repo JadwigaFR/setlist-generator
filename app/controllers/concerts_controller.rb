@@ -2,6 +2,7 @@ class ConcertsController < ApplicationController
   before_action :current_concert, only: [:show, :edit, :update, :destroy]
 
   def index
+    @user = RSpotify::User.new(session[:spotify_user]) if session[:spotify_user].present?
     @concerts = Concert.all
     @file = Tempfile.new
   end

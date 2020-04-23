@@ -1,5 +1,26 @@
 class PlaylistsController < ApplicationController
   require 'zip'
+  require 'csv'
+  before_action :set_user
+
+  def index
+    @playlists = @user.playlists
+  end
+
+  def extract_playlists
+    user_id = @user.id
+
+    playlists_params.each do |playlist_id|
+      playlist = RSpotify::Playlist.find(user_id, playlist_id)
+      CSV.open("#{Rails.root}/public/playlists/#{Time.now.strftime("%C%m%d")}_#{playlist.name}.csv", "wb", headers: true) do |csv|
+        csv << ['song_name', 'artist_name']
+        playlist.tracks.each do |song|
+          csv << [song.name, song.artists.first.name]
+        end
+      end
+    end
+    redirect_to root_path, flash: {notice: "Find your playlists in the Public/Playlist folder!"}
+  end
 
   def create_spotify_playlist
     spotify_user = RSpotify::User.new(session[:spotify_user])
@@ -16,7 +37,6 @@ class PlaylistsController < ApplicationController
   end
 
   def import_google_playlist
-    raise
     Zip::File.open(params[:file], Zip::File::CREATE) do |zip_file|
       # Handle entries one by one
       zip_file.each do |entry|
@@ -37,6 +57,15 @@ class PlaylistsController < ApplicationController
 
   def select_playlist
     @playlists
-    raise
+  end
+
+  private
+
+  def playlists_params
+    params.require(:playlists)
+  end
+
+  def set_user
+    @user = RSpotify::User.new(session[:spotify_user])
   end
 end
